@@ -11,9 +11,9 @@ filename=$(basename "$jar_file" .jar)
 origfilename=$(basename "$jar_file")
 # Define the directories
 emu=~/jars/emulator/freej2me.jar #change the emulator here
-jar_dir=~/jars/"$filename"
-icon_dir="$jar_dir"/icon
-app_dir=~/.local/share/applications/j2meInstaller
+jar_dir=~/jars/"$filename" #location where the jar files are stored
+icon_dir="$jar_dir"/icon #localtion for caching the icons
+app_dir=~/.local/share/applications/j2meInstaller #the folder where the desktop files are created
 
 # Create the directories
 mkdir -p "$jar_dir"
@@ -33,7 +33,7 @@ midlet_name=$(grep 'MIDlet-Name' "$jar_dir"/MANIFEST.MF | cut -d ':' -f2 | tr -d
 
 rm "$jar_dir"/MANIFEST.MF
 
-# Create the .desktop file check for the attribut for the emulator
+# Create the .desktop file check for the attribute for the emulator
 echo "[Desktop Entry]
 Type=Application
 Exec=java -jar $emu file://$jar_dir/$origfilename  
