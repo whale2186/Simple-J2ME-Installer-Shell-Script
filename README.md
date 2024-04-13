@@ -1,5 +1,5 @@
 This is a simple shell script for installing J2ME Files or jar 
-This only Creates the desktop file you need to provide a emulator and check for the right syntax
+This only Creates the desktop file. You need to provide a emulator and check for the right syntax in the script
 
 usage:
 ```
